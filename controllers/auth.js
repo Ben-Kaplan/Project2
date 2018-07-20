@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("#");
-const bcrypt = reuqire("bycrypt");
+const bcrypt = require("bycrypt");
 
 router.get("/", (req, res) => {
 	res.render("auth/register.ejs", {
