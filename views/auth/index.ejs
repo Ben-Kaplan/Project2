@@ -4,12 +4,17 @@
 	<title></title>
 </head>
 <body>
-	<h3>Login</h3>
-	<form action="/auth/login" method="POST">
-		Username: <input type="text" name="username" placeholder="username">
-		Password: <input type="password" name="password" placeholder="password">
-		<button type="submit">Login</button>
-	</form>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">User Profiles</a></li>
+				<li><a href="/auth/register">Login/Register</a></li>
+			</ul>
+		</nav>
+	</header>
+	
 	<h4><%=message%></h4>
 </body>
 </html>
