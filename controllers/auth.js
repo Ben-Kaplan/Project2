@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
-<<<<<<< HEAD
+
 const User = require("../models/user");
-=======
-const User = require("#");
->>>>>>> 8df359a9b2014fc0c60c43a1bbd2eb46c77a8188
+
 const bcrypt = require("bycrypt");
 
 router.get("/auth", (req, res) => {
