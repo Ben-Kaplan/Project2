@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">User Profiles</a></li>
-				<li><a href="/auth/register">Login/Register</a></li>
-			</ul>
-		</nav>
-	</header>
-	
-	<h4><%=message%></h4>
+    <%= message %>
+    <h1>Register or Login</h1>
+    <h2>Register</h2>
+    <form action="/register" method="post">
+        username: <input type="text" name="username">
+        password: <input type="password" name="password">
+        <button type="submit">Register</button>
+    </form>
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        username: <input type="text" name="username">
+        password: <input type="password" name="password">
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>
