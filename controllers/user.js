@@ -55,7 +55,7 @@ router.post('/', async (req, res) => {
 });
 // delete route
 router.delete('/:id', async (req, res) => {
-  const deletedUser = await User.findByIdAndRemove(req.params.id.)
+  const deletedUser = await User.findByIdAndRemove(req.params.id)
     try {
     const userIds = [];
     for(let i = 0; i < deletedUser.restaurants.length; i++){
