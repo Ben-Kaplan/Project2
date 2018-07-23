@@ -1,6 +1,5 @@
 const express = require('express');
 const router  = express.Router();
-const bcrypt = require("bycrypt");
 const User  = require('../models/user');
 const Restaurant = require('../models/restaurant');
 router.get("/", async (req, res) => {

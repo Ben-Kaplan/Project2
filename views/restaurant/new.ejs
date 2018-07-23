@@ -1,0 +1,30 @@
+!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <header>
+    <h1>Create a Restaurant Entry</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/restaurant">Restaurant Index</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form action="/restaurant" method="POST">
+      <input type="text" name="name" placeholder="Name of the Restaurant">
+      <input type="text" name="restaurantLocation" placeholder="Restaurant Address">
+      <input type="text" name="typeOfRestaurant" placeholder="Type of Restaurant">
+      <input type="number" name="price" placeholder="Price Range">
+      <input type="number" name="rating" placeholder="rating">
+      <input type="checkbox" name="dogFriendly"> 
+      <button type="submit">Add Restaurant</button>
+    </form>
+  </main>
+
+</body>
+</html>

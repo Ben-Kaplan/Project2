@@ -20,10 +20,10 @@ app.use("/restaurants", restaurantController);
 app.use("/users", userController);
 app.use("/auth", authController);
 
-app.get("/" (req, res) => {
+app.get("/", (req, res) => {
 	res.render("index.ejs")
 });
 
-app.listen(post, () => {
+app.listen(port, () => {
 	console.log("Howdy Cowboy");
 });

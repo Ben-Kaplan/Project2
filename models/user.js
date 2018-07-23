@@ -1,14 +1,24 @@
 const mongoose = require('mongoose');
-const Restaurant = require ('./models/restaurant')
+const restaurant = require('./restaurant')
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
 	username: {type: String, required: true, unique: true},
 	password: {type: String, required: true},
 	userLocation: String,
-	profile: ({name: String, animalName: String; bio: String}),
+	profile: ({name: String, animalName: String, bio: String}),
 	review: String,
 	
-	restaurant: [restaurantSchema]
+	restaurant: [Restaurant.schema],
 });
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', UserSchema);
+
+UserSchema.pre('save', async function(next){
+    const existingUser = await User.findOne({username: this.username})
+    if(!existingUser){
+        this.password = await bcrypt.hash(this.password, 10);
+    }
+    next();
+});
+
+module.exports = User
