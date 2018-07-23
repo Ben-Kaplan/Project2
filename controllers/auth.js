@@ -5,15 +5,14 @@ const bcrypt = require("bycrypt");
 
 
 // register route
-router.get('/', (req, res)=>{
+router.get('/', (req, res) => {
     let message = ""
     if(req.session.message){
         message = req.session.message
     }
     res.render('auth/index.ejs', {message: message})
 });
-
-router.post('/register', async (req, res)=>{
+router.post('/register', async (req, res) => {
     try {
         const createdUser = await User.create(req.body)
         res.redirect('/')
@@ -22,11 +21,9 @@ router.post('/register', async (req, res)=>{
         req.session.message = err.message
         res.redirect('/')
     }
- 
-    
-})
-
-router.post('/login', async (req, res)=>{
+});
+// login route
+router.post('/login', async (req, res) => {
     const userLoggingIn = await User.findOne({username: req.body.username})
     try {
     	if(!userTryingToLogIn){
