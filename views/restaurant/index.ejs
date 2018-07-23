@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
+  <head>
+    
+    <title></title>
+  </head>
+  <body>
+    <header>
+      
+      <h3>Hello, <%=username%></h3>!
 
-</body>
+      <h1>Restaurant (Index Page)</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/restaurant/new">Create a new Restaurant</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>List of Restaurant</h2>
+      <ul>
+        <% for(let i = 0; i < restaurant.length; i++){ %>
+          <li>
+            <a href="/restaurant/<%=restaurant[i]._id%>"><%=restaurant[i].name%></a>
+          </li>
+        <% } %>
+      
+        <li>
+          <a href="/auth/logout">Logout</a>
+        </li>
+      </ul>
+    </main>
+  </body>
 </html>

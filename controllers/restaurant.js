@@ -46,7 +46,7 @@ router.put('/:id', async (req, res) => {
 // post route
 router.post('/', async (req, res) => {
   try {
-    const createdRestaurant = await Restaunt.create(req.body)
+    const createdRestaurant = await Restaurant.create(req.body)
     res.redirect('/restaurants');
   } catch (err) {
     res.send(err);

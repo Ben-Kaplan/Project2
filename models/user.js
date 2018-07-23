@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Restaurant = require ('./restaurant')
 const bcrypt = require("bcrypt");
 
@@ -9,7 +10,9 @@ const UserSchema = new mongoose.Schema({
 	profile: ({name: String, animalName: String, bio: String}),
 	review: String,
 	
+
 	restaurant: [Restaurant.schema]
+
 });
 
 const User = mongoose.model('User', UserSchema);
@@ -22,4 +25,6 @@ UserSchema.pre('save', async function(next){
     next();
 });
 
+
 module.exports = User;
+

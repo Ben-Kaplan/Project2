@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
+
 const bcrypt = require("bcrypt");
 const passport = require("passport");
+
 
 // register route
 router.get('/', (req, res) => {
