@@ -37,7 +37,7 @@ router.get("/:id/edit", async (req, res) => {
 // put route
 router.put('/:id', async (req, res) => {
   try {
-    const updatedRestaurant = await Restaunt.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    const updatedRestaurant = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.redirect("/restaurants");
   } catch (err) {
     res.send(err);
