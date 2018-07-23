@@ -4,8 +4,8 @@ const User  = require('../models/user');
 const Restaurant = require('../models/restaurant');
 router.get("/", async (req, res) => {
   try {
-    const foundRestaurants = await User.find({});
-    res.render('users/index.ejs', {
+    const foundUsers = await User.find({});
+    res.render('user/index.ejs', {
         users: foundUsers
       });
   } catch (err) {
@@ -59,7 +59,7 @@ router.delete('/:id', async (req, res) => {
     try {
     const userIds = [];
     for(let i = 0; i < deletedUser.restaurants.length; i++){
-      articleIds.push(deletedUser.restaurants[i].id);
+      restaurantIds.push(deletedUser.restaurants[i].id);
     }
       await Restaurant.remove({_id: { $in: userIds}});
         res.redirect('/users')
