@@ -12,12 +12,11 @@ const UserSchema = new mongoose.Schema({
 	review: String,
 	
 
-	restaurants: [{type: Restaurant.schema, sparse: true}]
+	restaurants: {type: [Restaurant.schema], default: void 0}
 
 });
 
 const User = mongoose.model('User', UserSchema);
-
 UserSchema.pre('save', async function(next){
     const existingUser = await User.findOne({username: this.username})
     if(!existingUser){
