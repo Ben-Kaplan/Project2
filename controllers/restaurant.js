@@ -1,6 +1,5 @@
 const express = require('express');
 const router  = express.Router();
-const User  = require('../models/user');
 const Restaurant = require('../models/restaurant');
 // index route
 router.get("/", async (req, res) => {
@@ -38,7 +37,7 @@ router.get("/:id/edit", async (req, res) => {
 // put route
 router.put('/:id', async (req, res) => {
   try {
-    const updatedRestaurant = await Restaunt.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    const updatedRestaurant = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.redirect("/restaurants");
   } catch (err) {
     res.send(err);
@@ -55,7 +54,7 @@ router.post('/', async (req, res) => {
 
 });
 // delete route
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const deletedRestaurant = await Restaurant.findByIdAndRemove(req.params.id);
     res.redirect(".restaurants");
