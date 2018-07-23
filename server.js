@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
-const session = require('express-session')
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const morgan = require('morgan');
 const port = 3000;
+const passport = require("passport");
 const restaurantController = require("./controllers/restaurant.js");
 const userController = require("./controllers/user.js");
 const authController = require("./controllers/auth.js");
@@ -16,6 +17,8 @@ app.use(session({
     saveUninitialized: false
 }))
 app.use(morgan('short'));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use("/restaurants", restaurantController);
 app.use("/users", userController);
 app.use("/auth", authController);
