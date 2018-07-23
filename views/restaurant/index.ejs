@@ -7,7 +7,7 @@
   <body>
     <header>
       
-      <h3>Hello, <%=username%></h3>!
+      <h3>Hello</h3>
 
       <h1>Restaurant (Index Page)</h1>
       <nav>
@@ -16,7 +16,7 @@
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/restaurant/new">Create a new Restaurant</a>
+            <a href="/restaurants/new">Create a new Restaurant</a>
           </li>
         </ul>
       </nav>
@@ -24,9 +24,9 @@
     <main>
       <h2>List of Restaurant</h2>
       <ul>
-        <% for(let i = 0; i < restaurant.length; i++){ %>
+        <% for(let i = 0; i < restaurants.length; i++){ %>
           <li>
-            <a href="/restaurant/<%=restaurant[i]._id%>"><%=restaurant[i].name%></a>
+            <a href="/restaurants/<%=restaurants[i]._id%>"><%=restaurants[i].name%></a>
           </li>
         <% } %>
       

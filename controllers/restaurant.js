@@ -4,7 +4,7 @@ const Restaurant = require('../models/restaurant');
 // index route
 router.get("/", async (req, res) => {
   try {
-    const foundRestaurants = await Restaunt.find({});
+    const foundRestaurants = await Restaurant.find({});
     res.render('restaurant/index.ejs', {
         restaurants: foundRestaurants
       });
@@ -19,7 +19,7 @@ router.get("/new", (req, res) => {
 // show route
 router.get("/:id", async (req, res) => {
   try {
-    const foundRestaurant = await Restaunt.findById(req.params.id);
+    const foundRestaurant = await Restaurant.findById(req.params.id);
     res.render("restaurant/show.ejs", {restaurant: foundRestaurant});
   } catch (err) {
     res. send(err);
@@ -28,7 +28,7 @@ router.get("/:id", async (req, res) => {
 // edit route
 router.get("/:id/edit", async (req, res) => {
   try {
-    const foundRestaurant = await Restaunt.findById(req.params.id);
+    const foundRestaurant = await Restaurant.findById(req.params.id);
     res.render("restaurant/edit.ejs", {restaurant: foundRestaurant});
   } catch (err) {
     res.send(err);
