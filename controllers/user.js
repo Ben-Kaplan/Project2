@@ -53,6 +53,7 @@ router.post('/', async (req, res) => {
   }
 
 });
+
 // delete route
 router.delete('/:id', async (req, res) => {
   const deletedUser = await User.findByIdAndRemove(req.params.id)

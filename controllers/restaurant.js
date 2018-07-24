@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
     const foundRestaurant = await Restaurant.findById(req.params.id);
     res.render("restaurant/show.ejs", {restaurant: foundRestaurant});
   } catch (err) {
-    res. send(err);
+    res.send(err);
   }
 });
 // edit route
@@ -57,7 +57,7 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const deletedRestaurant = await Restaurant.findByIdAndRemove(req.params.id);
-    res.redirect(".restaurants");
+    res.redirect("/restaurants");
   } catch (err) {
     res.send(err);
   }

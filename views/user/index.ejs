@@ -10,25 +10,51 @@
 
   <title>User Index Page</title>
 </head>
-<body>
-  <header>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="./users/new">User Profiles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./auth">Login/Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+ <div>
     <h1>Users Index Page</h1>
-    <nav>
+   
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/user/new">Update User Profile</a></li>
+        <li><a href="/users/new">Update User Profile</a></li>
       </ul>
-    </nav>
-  </header><!-- /header -->
-  <main>
+   </div>
+  
+  <div>
     <h2>List of Users</h2>
     <ul>
       <% for (let i = 0; i < users.length; i++){%>
-           <li><a href="/user/<%=users[i].id%>"><%=users[i].name %></a></li>
+           <li><a href="/users/<%=users[i]._id%>"><%=users[i].username %></a></li>
       <%}%>
     </ul>
 
-  </main>
+  </div>
   <!-- Optional JavaScript -->
 
 
