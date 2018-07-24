@@ -23,7 +23,7 @@ require('./db/db');
 
 
 app.use(methodOverride('_method'));
-
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
     secret: "tacosburritosandspaghetti",
