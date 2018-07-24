@@ -10,12 +10,37 @@
 
 	<title>Restaurant Show Page</title>
 </head>
-<body>
-	<h1>Restaurant Show Page</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-<header>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="./users/new">User Profiles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./auth">Login/Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
       
-      <nav>
+    </ul>
+  </div>
+</nav>
+<body>
+	<div>
+  <h1>Restaurant Show Page</h1>
+
+
         <ul>
           <li>
             <a href="/">Home</a>
@@ -24,22 +49,21 @@
             <a href="/resturant">Restaurant Index</a>
           </li>
         </ul>
-      </nav>
-    </header>
-    <main>
+    
+   
       <section>
           <h1><%=restaurant.name%></h1>
-          <small>by: <a href="/restaurant/<%=restaurant._id%>"><%=users.name%></a></small>
+          <small>by: <a href="/restaurants/<%=restaurant._id%>"><%=restaurant.name%></a></small>
 
-          <a href="/restaurant/<%=restaurant._id%>/edit">Edit</a>
+          <a href="/restaurants/<%=restaurant._id%>/edit">Edit</a>
       </section>
       <section>
-          <form action="/restaurant/<%=restaurant._id%>?_method=DELETE" method="post">
+          <form action="/restaurants/<%=restaurant._id%>?_method=DELETE" method="post">
               <input type="submit" value="Delete Restaurant"/>
           </form>
       </section>
-     
-    </main>
+     </div>
+   
 
     <!-- Optional JavaScript -->
 

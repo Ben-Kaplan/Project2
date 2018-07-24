@@ -8,7 +8,7 @@ const restaurantSchema = new mongoose.Schema({
 	price: Number,
 	comment: String,
 	rating: Number,
-	dogFriendly: Boolean
+	//dogFriendly: Boolean
 });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);

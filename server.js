@@ -9,13 +9,20 @@ const passport = require("passport");
 const restaurantController = require("./controllers/restaurant.js");
 const userController = require("./controllers/user.js");
 const authController = require("./controllers/auth.js");
+
+//Laurie added method-override
+const methodOverride = require('method-override');
+
 require('./db/db');
+
+//Laurie added method-override
+app.use(methodOverride('_method'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
     secret: "tacosburritosandspaghetti",
     saveUninitialized: false
-}))
+}));
 app.use(morgan('short'));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -24,7 +31,7 @@ app.use("/users", userController);
 app.use("/auth", authController);
 
 app.get("/", (req, res) => {
-	res.render("index.ejs")
+	res.render("index.ejs");
 });
 
 app.listen(port, () => {
