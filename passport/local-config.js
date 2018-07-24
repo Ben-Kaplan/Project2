@@ -1,5 +1,6 @@
 const passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
+const User = require("../models/user.js");
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
@@ -11,6 +12,7 @@ passport.use(new LocalStrategy(
       if (!user.validPassword(password)) {
         return done(null, false, { message: 'Incorrect password.' });
       }
+      // res.send(?)
       return done(null, user);
     });
   }

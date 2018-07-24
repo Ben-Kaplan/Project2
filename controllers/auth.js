@@ -26,27 +26,41 @@ router.post('/register', async (req, res) => {
     }
 });
 // login route
-router.post('/login', async (req, res) => {
-    const userLoggingIn = await User.findOne({username: req.body.username})
-    try {
-    	if(!userLoggingIn){
-        	req.session.message = "Invalid username or password";
-        	res.redirect("/")
-    	} else {
-        	const validLogin = await bcrypt.compare(req.body.password, userLoggingIn.password)
-        	if(!validLogin){
-            	req.session.message = "Invalid username or password";
-            	res.redirect("/")
-        	} else {
-                req.session.loggedIn = true;
-                req.session.userId = userLoggingIn.id;
-            	res.redirect('/restaurants');
-        	}
-    	}
-	} catch (err) {
-		res.send(err);
-	}
-})
+router.post('/login', async (req, res, next) => {
+//     const userLoggingIn = await User.findOne({username: req.body.username})
+//     try {
+//     	if(!userLoggingIn){
+//         	req.session.message = "Invalid username or password";
+//         	res.redirect("/")
+//     	} else {
+//         	const validLogin = await bcrypt.compare(req.body.password, userLoggingIn.password)
+//         	if(!validLogin){
+//             	req.session.message = "Invalid username or password";
+//             	res.redirect("/")
+//         	} else {
+//                 req.session.loggedIn = true;
+//                 req.session.userId = userLoggingIn.id; 
+//             	res.redirect('/restaurants');
+//         	}
+//     	}
+// 	} catch (err) {
+// 		res.send(err);
+// 	}
+const passportCallback = passport.authenticate('local', { successRedirect: '/', failureRedirect: '/auth'})
+    passportCallback(req, res, next);
+});
+router.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/auth");
+});
+router.get('/google',
+  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+
+router.get('/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 
 module.exports = router;
