@@ -1,15 +1,18 @@
 const express = require("express");
 const app = express();
-const session = require('express-session');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const morgan = require('morgan');
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const bcrypt = require("bcrypt");
+const morgan = require("morgan");
 const port = 3000;
 const passport = require("passport");
 const restaurantController = require("./controllers/restaurant.js");
 const userController = require("./controllers/user.js");
 const authController = require("./controllers/auth.js");
-require('./db/db');
+require("./db/db");
+require("./passport/serialize.js");
+require("./passport/local-config.js");
+require("./passport/google-config.js");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
