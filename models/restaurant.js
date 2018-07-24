@@ -8,6 +8,7 @@ const restaurantSchema = new mongoose.Schema({
 	price: Number,
 	comment: String,
 	rating: Number,
+	website: String
 	//dogFriendly: Boolean
 });
 

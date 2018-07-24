@@ -7,6 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="/public/css/style.css"></link>
     
     <title>Edit Restaurant</title>
   </head>
@@ -30,40 +32,77 @@
           <a class="nav-link" href="./auth">Login/Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="/auth/logout">Logout</a>
         </li>
       
     </ul>
   </div>
 </nav>
-  <body>
+  <body class="restaurantEditEjs">
     
-    <div>
+    <div class="container">
+      
       <h1>Edit Restaurant</h1>
      
-        <ul>
-          <li>
+        <hr>
+        <div class="container">
+            <div class="homeLink">
             <a href="/">Home</a>
-          </li>
-          <li>
+            </div>
+            <div class="restLink">
             <a href="/restaurants">Restaurant Index</a>
-          </li>
-        </ul>
+            </div>
+        </div>
+        <hr>
+      
      
     
       <h2>Restaurant Info:</h2>
       
-      <form action="/restaurants/<%=restaurant.id%>?_method=PUT" method="post">
-        
-    
+      <form>
+        <label>Restaurant Name</label>
+        <input class="form-control" type="text" name="name" value="<%=restaurant.name%>">
+        <br>
+         <label>Website</label>
+         <input class="form-control" type="type" name="website" placeholder="Website">
+        <br>
+        <label>City, State</label>
+        <input class="form-control" type="text" name="restaurantLocation" placeholder="City, State">
+        <br>
+         <label>Type of Restaurant</label>
+         <input class="form-control" type="text" name="typeOfRestaurant" placeholder="Type of Restaurant (ex. pizza, coffee, and steak, etc.)">
 
-        <input type="text" name="title" value="<%=restaurant.name%>"/><br/>
+        <br>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Rating: 1-4</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="rating">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
         
-        <textarea name="body"><%=restaurant.body%></textarea><br/>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Price Range</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="price">
+            <option>$0-$10</option>
+            <option>$11-$20</option>
+            <option>$21-$30</option>
+            <option>$31-Over</option>
+          </select>
+        </div>
         
-        <input type="submit" value="Update Restaurant"/>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Comments</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
+       </div>
+        <br>
       
+        <button type="button" class="btn btn-secondary btn-lg">Update Restaurant</button>
       </form>
+    
     </div>
 
     <!-- Optional JavaScript -->

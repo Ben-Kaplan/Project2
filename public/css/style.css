@@ -1,0 +1,11 @@
+.editEJS {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(50, 50, 50, 0.5);
+}
+
+

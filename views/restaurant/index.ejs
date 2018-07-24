@@ -32,7 +32,7 @@
           <a class="nav-link" href="./auth">Login/Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="/auth/logout">Logout</a>
         </li>
       
     </ul>
@@ -54,14 +54,20 @@
     
     
       <h2>List of Restaurant</h2>
+     <div class="container">
       <ul>
         <% for(let i = 0; i < restaurants.length; i++){ %>
           <li>
-            <a href="/restaurants/<%=restaurants[i]._id%>"><%=restaurants[i].name%></a>
+            <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
           </li>
         <% } %>
       </ul>
-   
+            <div id='gridContainer'>
+                <div class="grid-container"></div>
+            </div>
+
+    </div>
+
   </div>
     <!-- Optional JavaScript -->
 
