@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const findOrCreate = require("mongoose-findorcreate");
-const Restaurant = require ('./restaurant')
+const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema({
@@ -12,6 +12,9 @@ const UserSchema = new mongoose.Schema({
 	review: String,
 	googleId: String,
 	displayName: String,
+	likedRestaurants: [{type: Schema.Types.ObjectId, ref:'Restaurant'}],
+	// posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+	
 
 });
 UserSchema.methods.validPassword = async function(password){

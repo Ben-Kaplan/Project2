@@ -12,9 +12,10 @@ router.get('/', (req, res) => {
     if(req.session.message){
         message = req.session.message
     }
-    res.render('auth/index.ejs', {message: message})
+    res.render("auth/index.ejs", {message: message})
 });
-router.post('/register', async (req, res) => {
+// register route
+router.post("/register", async (req, res) => {
     try {
         console.log("posting to route")
         const createdUser = await User.create(req.body)
@@ -27,30 +28,13 @@ router.post('/register', async (req, res) => {
 });
 // login route
 router.post('/login', async (req, res, next) => {
-//     const userLoggingIn = await User.findOne({username: req.body.username})
-//     try {
-//     	if(!userLoggingIn){
-//         	req.session.message = "Invalid username or password";
-//         	res.redirect("/")
-//     	} else {
-//         	const validLogin = await bcrypt.compare(req.body.password, userLoggingIn.password)
-//         	if(!validLogin){
-//             	req.session.message = "Invalid username or password";
-//             	res.redirect("/")
-//         	} else {
-//                 req.session.loggedIn = true;
-//                 req.session.userId = userLoggingIn.id; 
-//             	res.redirect('/restaurants');
-//         	}
-//     	}
-// 	} catch (err) {
-// 		res.send(err);
-// 	}
-const passportCallback = passport.authenticate('local', { successRedirect: '/', failureRedirect: '/auth'})
+    const passportCallback = passport.authenticate('local', { successRedirect: '/', failureRedirect: '/auth'})
     passportCallback(req, res, next);
+    console.log(req.user);
 });
 router.get("/logout", function (req, res) {
     req.logout();
+    console.log(req.user, "logged out");
     res.redirect("/auth");
 });
 router.get('/google',

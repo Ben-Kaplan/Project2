@@ -34,8 +34,8 @@ router.get("/:id/edit", async (req, res) => {
     res.send(err);
   }
 });
-// put route
-router.put('/:id', async (req, res) => {
+// edit put route
+router.put("/:id", async (req, res) => {
   try {
     const updatedRestaurant = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.redirect("/restaurants");
@@ -43,8 +43,8 @@ router.put('/:id', async (req, res) => {
     res.send(err);
   }
 });
-// post route
-router.post('/', async (req, res) => {
+// new post route
+router.post("/", async (req, res) => {
   try {
     const createdRestaurant = await Restaurant.create(req.body)
     res.redirect('/restaurants');
@@ -52,6 +52,17 @@ router.post('/', async (req, res) => {
     res.send(err);
   }
 
+});
+// like route
+router.post("/:id/like", async (req, res) => {
+  try {
+    console.log(req.user);
+    await req.user.likedRestaurants.push(req.params.id);
+    await req.user.save();
+    res.redirect("/restaurants");
+  } catch (err) {
+    res.send(err);
+  }
 });
 // delete route
 router.delete('/:id', async (req, res) => {

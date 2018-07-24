@@ -60,6 +60,9 @@
           <li>
             <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
           </li>
+          <form action ="/restaurants/<%=restaurants[i].id%>/like" method="POST">
+            <button type="submit"> value="<%restaurants[i].id%>">Like</button>
+          </form>
         <% } %>
       </ul>
             <div id='gridContainer'>
