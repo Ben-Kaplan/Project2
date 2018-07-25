@@ -52,89 +52,38 @@
         </ul>
      
     
-    
-      <h2>List of Restaurant</h2>
-     <div class="container">
-      <ul>
+    <h2>List of Restaurant</h2>
+    <div class="container">
+      <table style="border: solid 1px;">
+        <tr>
+          <th>Name</th>
+          <th>Vote</th>
+          <th>Rating</th>
+        </tr>
         <% for(let i = 0; i < restaurants.length; i++){ %>
-          <li>
-            <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
-          </li>
-          <form action ="/restaurants/<%=restaurants[i].id%>/like" method="POST">
-            <button type="submit" value="<%restaurants[i].id%>">Like</button>
-          </form>
+          <tr style="border: solid 1px">  
+
+            <td>
+              <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
+            </td>
+            
+            <td>
+              <form action ="/restaurants/<%=restaurants[i].id%>/like" method="POST">
+                <button type="submit" value="<%restaurants[i].id%>">Like</button>
+              </form>
+            </td>
+
+            <td>
+              <%= restaurants[i].rating %>
+            </td>
+
+          </tr>
         <% } %>
-      </ul>
+      
+
+      </table>
 
 
-<!-- table for index -->
-<table>
-<tbody>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
 
     </div>
 
