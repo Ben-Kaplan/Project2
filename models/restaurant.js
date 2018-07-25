@@ -12,11 +12,6 @@ const restaurantSchema = new mongoose.Schema({
 	comment: String,
 	rating: Number,
 	website: String,
-
-	reviews: []
-
-
-	//dogFriendly: Boolean
 	reviews: [Reviews.schema],
 });
 
