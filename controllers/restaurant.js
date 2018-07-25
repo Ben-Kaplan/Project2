@@ -27,9 +27,10 @@ router.get("/", async (req, res) => {
 });
 // new route
 router.get("/new", (req, res) => {
-  if (User.loggedIn === true) {
-      res.render('restaurant/new.ejs'); 
+  if (req.session.loggedIn == true) {
+      res.render('restaurant/new.ejs');
   } else {
+      console.log("cannot show content")
       res.redirect("/auth");
   }
 
@@ -46,7 +47,7 @@ router.get("/:id", async (req, res) => {
 // edit route
 router.get("/:id/edit", async (req, res) => {
   try {
-    if (User.LoggedIn === true) {
+    if (req.session.loggedIn == true) {
       const foundRestaurant = await Restaurant.findById(req.params.id);
       res.render("restaurant/edit.ejs", {restaurant: foundRestaurant});
     } else {
@@ -78,7 +79,7 @@ router.post("/", async (req, res) => {
 // like route
 router.post("/:id/like", async (req, res) => {
   try {
-    if (User.loggedIn === true) {
+    if (req.session.loggedIn == true) {
       await req.user.likedRestaurants.push(req.params.id);
       await req.user.save();
       res.redirect("/");
@@ -92,7 +93,7 @@ router.post("/:id/like", async (req, res) => {
 // review route
 router.post("/comment", async (req, res) => {
   try {
-    if (User.loggedIn === true) {
+    if (req.session.loggedIn == true) {
       const createdReview = await Restaurant.create(req.body);
       await Restaurant.reviews.push(createdReview);
       res.redirect("/restaurants/:id");
@@ -108,7 +109,7 @@ router.post("/comment", async (req, res) => {
 // delete route
 router.delete('/:id', async (req, res) => {
   try {
-    if (User.loggedIn === true) {
+    if (req.session.loggedIn == true) {
       const deletedRestaurant = await Restaurant.findByIdAndRemove(req.params.id);
       res.redirect("/restaurants");
     } else {

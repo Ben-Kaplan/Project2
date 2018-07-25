@@ -26,7 +26,11 @@
           </li>
         </ul>
 
-
+<form action="/restaurants" method="GET">
+    <input type="text" name="name" placeholder="Restaurant Name">
+    <input type="text" name="zipcode" placeholder="Your Zipcode">
+    <input type="submit" value="Search">
+</form>
 <%for(i = 0; i < restaurants.length; i++) {%>
     <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
     <form action="/restaurants/<%=restaurants[i].id%>/like" method="POST">
