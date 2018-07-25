@@ -20,8 +20,12 @@ router.post("/register", async (req, res) => {
         console.log("posting to route")
         const createdUser = await User.create(req.body)
         console.log(createdUser);
-        User.loggedIn = true;
-        res.redirect('/');
+        req.login(createdUser, function(err) {
+            req.session.loggedIn = true;
+        if (err) { return next(err); }
+            return res.redirect('/');
+});
+        
     } catch (err) {
         console.log(err)
         req.session.message = err.message
@@ -31,7 +35,7 @@ router.post("/register", async (req, res) => {
 router.post('/login', async (req, res, next) => {
     const passportCallback = passport.authenticate('local', { successRedirect: '/', failureRedirect: '/auth'})
     passportCallback(req, res, next);
-    User.loggedIn = true,
+    req.session.loggedIn = true,
     console.log(req.user);
 });
 router.get("/logout", function (req, res) {
