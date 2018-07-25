@@ -20,6 +20,7 @@ router.post("/register", async (req, res) => {
         console.log("posting to route")
         const createdUser = await User.create(req.body)
         console.log(createdUser);
+        User.loggedIn = true;
         res.redirect('/');
     } catch (err) {
         console.log(err)
@@ -30,6 +31,7 @@ router.post("/register", async (req, res) => {
 router.post('/login', async (req, res, next) => {
     const passportCallback = passport.authenticate('local', { successRedirect: '/', failureRedirect: '/auth'})
     passportCallback(req, res, next);
+    User.loggedIn = true,
     console.log(req.user);
 });
 router.get("/logout", function (req, res) {

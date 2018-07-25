@@ -12,6 +12,8 @@ const UserSchema = new mongoose.Schema({
 	review: String,
 	googleId: String,
 	displayName: String,
+	loggedIn: Boolean,
+	posts: [],
 	likedRestaurants: [{type: Schema.Types.ObjectId, ref:'Restaurant'}],
 	// posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
 	

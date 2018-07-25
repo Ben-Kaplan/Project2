@@ -9,7 +9,7 @@ const passport = require("passport");
 const restaurantController = require("./controllers/restaurant.js");
 const userController = require("./controllers/user.js");
 const authController = require("./controllers/auth.js");
-
+require("dotenv").config();
 require("./db/db");
 require("./passport/serialize.js");
 require("./passport/local-config.js");
