@@ -4,9 +4,11 @@ const Restaurant = require('../models/restaurant');
 // index route
 router.get("/", async (req, res) => {
   try {
+    const data = await User.find({}).populate('Restaurant');
     const foundRestaurants = await Restaurant.find({});
     res.render('restaurant/index.ejs', {
-        restaurants: foundRestaurants
+        restaurants: foundRestaurants,
+        "users": data
       });
   } catch (err) {
     res.send(err);
@@ -63,6 +65,10 @@ router.post("/:id/like", async (req, res) => {
   } catch (err) {
     res.send(err);
   }
+});
+// comment route
+router.post("/comment", async (req, res) => {
+  const userPost = await Restaurant.findOne(req.body.name);
 });
 // delete route
 router.delete('/:id', async (req, res) => {
