@@ -54,12 +54,18 @@
     
     <h2>List of Restaurant</h2>
     <div class="container">
+        <form action="/restaurants" method="GET">
+          <input type="text" name="name" placeholder="Restaurant Search">
+          <input type="text" name="zipcode" placeholder="Your Zipcode">
+          <input type="submit" name="Search">
+        </form>
       <table style="border: solid 1px;">
         <tr>
           <th>Name</th>
           <th>Vote</th>
           <th>Rating</th>
         </tr>
+      
         <% for(let i = 0; i < restaurants.length; i++){ %>
           <tr style="border: solid 1px">  
 
