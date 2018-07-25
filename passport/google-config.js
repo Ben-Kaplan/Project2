@@ -7,8 +7,8 @@ const User = require("../models/user.js");
 //   credentials (in this case, an accessToken, refreshToken, and Google
 //   profile), and invoke a callback with a user object.
 passport.use(new GoogleStrategy({
-    clientID: "949540576509-sovcpo2b45u8fl3fqt2e8ijhkjcse7lv.apps.googleusercontent.com",
-    clientSecret: "sEb3NKvZp8U5XUccbbR5W7sB",
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
