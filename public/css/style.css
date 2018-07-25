@@ -1,3 +1,4 @@
+/*Restaurant Edit view*/
 .restaurant-edit-ejs {
 	background-image: url("/img/frenchieBreakfast.jpg");
 	background-repeat: no-repeat;
@@ -6,6 +7,7 @@
 	background-size: cover;
 	background-blend-mode: 
 }
+/*Home page view*/
 .home-page {
 	background-image: url("/img/frenchieBreakfast.jpg");
 	background-repeat: no-repeat;
@@ -15,12 +17,38 @@
 	background-blend-mode: 
 	
 }
+.jumbotron {
+	background-color: #71CEED;
+	opacity: 0.8;
+}
+.btn btn-primary btn-lg {
+	color: #E85B14;
+}
+
+/*Restaurant gallery CSS*/
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+
+
+/*Navbar CSS*/
 .navbar {
 	background-color: #134359;
 }
 .nav-link {
 	color: white;
 }
+
+
+
+/*Login form modal CSS*/
 .login-form {
 		width: 385px;s
 		margin: 30px auto;
@@ -76,46 +104,3 @@
     }  
 
 
-.nav-item-logout {
-	align-items: right;
-}
-
-.search {
-	color: #E85B14;
-	padding-top: 100px;
-}
-/*.glyphicon {
-	color: #E85B14;
-}*/
-
-#custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 23px;
-} 
