@@ -17,6 +17,12 @@
 	background-blend-mode: 
 	
 }
+#box {
+    background-color: pink;
+    padding: 50px;
+    margin-top: 25px;
+    border-radius: 20px;
+}
 .jumbotron {
 	background-color: #71CEED;
 	opacity: 0.8;

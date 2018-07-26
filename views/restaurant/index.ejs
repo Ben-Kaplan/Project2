@@ -8,44 +8,50 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
     <title>Restaurant Index Page</title>
   </head>
-   <body>
+   
+  <body>
      <%include ../_navbar.ejs%>
    
-   <div>
-    <h1>Restaurant (Index Page)</h1>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/restaurants/new">Create a new Restaurant</a>
-          </li>
-        </ul>
-<div class="search">
-<form action="/restaurants" method="GET">
-    <input type="text" name="name" placeholder="Restaurant Name">
-    <input type="text" name="zipcode" placeholder="Your Zipcode">
-    <input type="submit" value="Search">
-</form>
-</div>
+   <!-- Jumbotron -->
+   <div class="jumbotron">
+      <h1>Restaurant Directory</h1>
+        <p>Restaurant directory - find a restaurant that is dog friendly or add a restaurant that is dog friendly  </p> 
+      <hr class="my-4">
+      
+      <div class="container">
+        <form action="/restaurants" method="GET">
+            <input class="form-control-lg" type="text" name="name" placeholder="Restaurant Name">
+            <input class="form-control-lg" type="text" name="zipcode" placeholder="Your Zipcode">
+            <!-- <input type="submit" value="Search"> -->
+            <button type="submit" class="btn btn-secondary btn-lg" value="search">Search</button>
+        </form>
+        </div>
+        <br>
+        <br>
+      <a class="btn btn-secondary btn-md" href="/restaurants/new" role="button">Create a New Restaurant</a>
+      </p>
+    </div>
 
 
- <div class="container">
-<div class="row imagetiles">
-<%for(let i = 0; i < restaurants.length; i++) {%>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-      <a href="/restaurants" class="d-block mb-4 h-100">     
-      <img class="img-fluid img-thumbnail" src="<%=restaurants[i].url%>"> </a>
-        <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
-  </div>
-<% }%> 
-  </div>
-</div>
-<br>
+        <div class="container">
+          <div class="row imagetiles">
+        <%for(let i = 0; i < restaurants.length; i++) {%>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+              <a href="/restaurants" class="d-block mb-4 h-100">     
+              <img class="img-fluid img-thumbnail" src="<%=restaurants[i].url%>"> </a>
+              <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
+            </div>
+          <% }%> 
+          </div>
+        </div>
+
+
+
+
     <!-- Optional JavaScript -->
 
 
