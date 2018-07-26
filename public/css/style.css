@@ -52,7 +52,11 @@ img {
 	color: white;
 }
 
-
+img {
+    height:400px;
+    width: 400px;
+    object-fit: contain;
+}
 
 /*Login form modal CSS*/
 .login-form {

@@ -2,7 +2,7 @@ const express = require("express");
 const router  = express.Router();
 const User = require("../models/user.js");
 const Restaurant = require("../models/restaurant");
-const Reviews = require("../models/restaurant");
+const Reviews = require("../models/reviews.js");
 // index route
 router.get("/", async (req, res) => {
   try {
@@ -94,16 +94,15 @@ router.post("/:id/like", async (req, res) => {
 // review route
 router.post("/:id/review", async (req, res) => {
   try {
-    if (req.session.loggedIn == true) {
-      const createdReview = await Restaurant.create(req.body);
+      const createdReview = await Reviews.create(req.body);
       console.log(createdReview);
-      await Restaurant.reviews.push(createdReview);
-      await Restaurant.reviews.save();
+      const currentRestaurant = await Restaurant.findById(req.params.id);
+      console.log(currentRestaurant);
+      currentRestaurant.reviews.push(createdReview);
+      await currentRestaurant.save();
       console.log(Restaurant.reviews)
-      res.redirect("/restaurants/:id");
-    } else {
-      res.rediect("/auth");
-    }
+      res.redirect(`/restaurants/${req.params.id}`);
+
     
   } catch (err) {
     res.send(err);
