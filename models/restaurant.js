@@ -11,7 +11,7 @@ const restaurantSchema = new mongoose.Schema({
 	rating: Number,
 	website: String,
 	reviews: [Reviews.schema],
-	imageURL: String, 
+	imageUrl: String, 
 });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);
