@@ -31,107 +31,16 @@
     <input type="text" name="zipcode" placeholder="Your Zipcode">
     <input type="submit" value="Search">
 </form>
-<%for(i = 0; i < restaurants.length; i++) {%>
+<%for(let i = 0; i < restaurants.length; i++) {%>
+    <img src="<%=restaurants[i].url%>">
     <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
-    <form action="/restaurants/<%=restaurants[i].id%>/like" method="POST">
- 
-  <button type="submit" value="<%=restaurants[i].id%>">Like</button>
 </form>
 <% }%> 
-
-
-
-
-
-<!-- trying to set up gallery  -->
-
-   <div class="container">
-
-      <h1 class="my-4 text-center text-lg-left">Restaurant Gallery</h1>
-
-      <div class="row text-center text-lg-left">
-
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          
-          <%for(let i = 0; i < restaurants.length; i++) {%>
-          
-      
-
-          <a href="/restaurants" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="<%=restaurants[i].imageURL%>" alt="">
-          </a>
-        
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/dogInCafe.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/pizzaBeer.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/pupInLap.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/smallDogDrink.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/cafeChairsMenus.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/dachshund.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/dogYellowPuppy.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/blackDogFeet.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/cafeInside.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/goldenPup.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/smallDogsLeash.jpg" alt="">
-          </a>
-          <%}%>
-        </div>
-      </div>
-
-  </div>
-    
-    
-
-
-
- 
     <!-- Optional JavaScript -->
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </body>
