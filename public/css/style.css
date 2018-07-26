@@ -1,25 +1,29 @@
 /*Restaurant Edit view*/
-.restaurant-edit-ejs {
+/*.restaurant-edit-ejs {
 	background-image: url("/img/frenchieBreakfast.jpg");
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center;
 	background-attachment: fixed;
 	background-size: cover;
-	background-blend-mode: 
-}
+
+    background-attachment: fixed;
+}*/
 /*Home page view*/
 .home-page {
-	background-image: url("/img/frenchieBreakfast.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-attachment: fixed;
-	background-size: cover;
-	background-blend-mode: 
-	
+
+background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/shutterstock_112117622.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .jumbotron {
-	background-color: #71CEED;
-	opacity: 0.8;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+	background-color:rgb(200,200,200, .4);
+    text-align: center;
+
 }
 .btn btn-primary btn-lg {
 	color: #E85B14;
@@ -28,6 +32,15 @@
 /*Search */
 .search {
     display: center;
+
+}
+.lead {
+    color: white;
+
+}
+#opaque {
+    color: white;
+
 }
 
 
@@ -46,11 +59,17 @@ img {
 
 /*Navbar CSS*/
 .navbar1 {
-	background-color: #134359;
+	background-color: rgb(232,91,20,.8);
+}
+.navbar-nav {
+    width: 100%;
+    text-align: center;
 }
 .nav-link {
 	color: white;
+
 }
+
 
 img {
     height:400px;

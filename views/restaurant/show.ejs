@@ -80,9 +80,21 @@
         </div>
         <br>
         <br>
-
-
-          <textarea type="text" name="review" width="200" height="100" placeholder="Review"></textarea>
+        <form action="/restaurants/<%=restaurant.id%>/review" method="POST">  
+        <label>Rating: 1-4</label>
+          <select class="form-control" id="exampleFormControlSelect2" name="rating">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+          </select>  
+        
+          <textarea type="text" name="body" width="200" height="100" placeholder="Review"></textarea>
+          <br>
+          <br>
+      
+          <button type="submit">Submit</button>
+        </form>
 
           <br>
           <br>
