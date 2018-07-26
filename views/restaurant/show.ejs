@@ -33,9 +33,10 @@
   
    
 <!-- Form to show Restaurant info -->
+  <div class="container">
   <img src="<%=restaurant.url%>">
   <h1><%=restaurant.name%></h1>
-    <div>
+    
 
       <%for(let i = 0; i < restaurant.length; i++) {%>
           <img src="<%=restaurant.id.imageURL%>">
@@ -43,12 +44,12 @@
       <%}%>
 
       <h3><%=restaurant.typeOfRestaurant%></h3>
-      <h3><%=restaurant.restaurantLocation%></h3>       
-      <h3><%=restaurant.zipcode%></h3>       
-      <h3><%=restaurant.price%></h3>       
-      <h3><%=restaurant.rating%></h3>
+      <h3>State, City: <%=restaurant.restaurantLocation%></h3>       
+      <h3>Zip Code: <%=restaurant.zipcode%></h3>       
+      <h3>Price Range: <%=restaurant.price%></h3>       
+      <h3>Rating: <%=restaurant.rating%></h3>
       <a href="<%=restaurant.website%>"><h3><%=restaurant.website%></h3></a>
-
+      <h3>Comments: <%=restaurant.comment%></h3>
       <%for(let i = 0; i < restaurant.reviews.length; i++) {%>
         <p><%=restaurant.reviews[i].rating%></p>
         <p><%=restaurant.reviews[i].body%></p>
@@ -58,38 +59,55 @@
 
 
       <form action="/restaurants/<%=restaurant.id%>/review" method="POST">  
-        <label>Rating: 1-4</label>
-          <select class="form-control" id="exampleFormControlSelect2" name="rating">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-          </select>  
-        
-          <textarea type="text" name="body" width="200" height="100" placeholder="Review"></textarea>
+
+         <h6>Rate the Restaurant</h6>
+        <div class="form-check form-check-inline">
+       
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+        <label class="form-check-label" for="inlineRadio3">3</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
+        <label class="form-check-label" for="inlineRadio4">4</label>
+        </div>
+        <br>
+        <br>
+
+
+          <textarea type="text" name="review" width="200" height="100" placeholder="Review"></textarea>
+
           <br>
           <br>
       
           <button type="submit">Submit</button>
         </form>
         
-        </div>
+       
         <% for (let i =0; i < restaurant.reviews.length; i++) {%>
             <p><%=restaurant.reviews[i].rating%></p>
             <p><%=restaurant.reviews[i].body%></p>
 
         <%}%>
-
+        <br>
         <section>
           <a href="/restaurants/<%=restaurant.id%>/edit">Edit</a>
         </section>
-        
+        <br>
         <section>
           <form action="/restaurants/<%=restaurant.id%>?_method=DELETE" method="post">
               <input type="submit" value="Delete Restaurant"/>
           </form>
         </section>
       </div>
+       </div>
     <!-- Optional JavaScript -->
 
 
