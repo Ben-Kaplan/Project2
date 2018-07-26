@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     if (req.query.name || req.query.zipcode ) {
       const regex = new RegExp(escapeRegex(req.query.name), "gi");
       const zipregex = new RegExp(escapeRegex(req.query.zipcode), "g");
-      const foundRestaurants = await Restaurant.find({name: regex, restaurantLocation: zipregex});
+      const foundRestaurants = await Restaurant.find({name: regex, zipcode: zipregex});
       res.render('restaurant/index.ejs', {
         restaurants: foundRestaurants,});
     } else {
