@@ -17,6 +17,12 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     -o-background-size: cover;
     background-size: cover;
 }
+#box {
+    background-color: pink;
+    padding: 50px;
+    margin-top: 25px;
+    border-radius: 20px;
+}
 .jumbotron {
     width: 1000px;
     margin: 0 auto;
