@@ -25,17 +25,27 @@
             <a href="/restaurants/new">Create a new Restaurant</a>
           </li>
         </ul>
-
+<div class="search">
 <form action="/restaurants" method="GET">
     <input type="text" name="name" placeholder="Restaurant Name">
     <input type="text" name="zipcode" placeholder="Your Zipcode">
     <input type="submit" value="Search">
 </form>
+</div>
+
+
+ <div class="container">
+<div class="row imagetiles">
 <%for(let i = 0; i < restaurants.length; i++) {%>
-    <img src="<%=restaurants[i].url%>">
-    <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
-</form>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+      <a href="/restaurants" class="d-block mb-4 h-100">     
+      <img class="img-fluid img-thumbnail" src="<%=restaurants[i].url%>"> </a>
+        <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
+  </div>
 <% }%> 
+  </div>
+</div>
+<br>
     <!-- Optional JavaScript -->
 
 

@@ -25,18 +25,24 @@
 	color: #E85B14;
 }
 
+/*Search */
+.search {
+    display: center;
+}
+
+
 /*Restaurant gallery CSS*/
-/*body {
-  padding-top: 54px;
+/*.container {
+    display: inline-block;
+}
+
+img {
+    width:200px;
+    height:200px;
+    border: 1px solid black;
+    object-fit: cover;
+
 }*/
-
-/*@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
-}*/
-
-
 
 /*Navbar CSS*/
 .navbar1 {
