@@ -53,8 +53,12 @@
 
         <div class="col-lg-3 col-md-4 col-xs-6">
           
+          <%for(let i = 0; i < restaurants.length; i++) {%>
+          
+      
+
           <a href="/restaurants" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="/img/coffeeLounge.jpg" alt="">
+            <img class="img-fluid img-thumbnail" src="<%=restaurants[i].imageURL%>" alt="">
           </a>
         
         </div>
@@ -112,8 +116,10 @@
           <a href="#" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="/img/smallDogsLeash.jpg" alt="">
           </a>
+          <%}%>
         </div>
       </div>
+
   </div>
     
     

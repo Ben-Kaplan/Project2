@@ -26,20 +26,20 @@
 }
 
 /*Restaurant gallery CSS*/
-body {
+/*body {
   padding-top: 54px;
-}
+}*/
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
   body {
     padding-top: 56px;
   }
-}
+}*/
 
 
 
 /*Navbar CSS*/
-.navbar {
+.navbar1 {
 	background-color: #134359;
 }
 .nav-link {

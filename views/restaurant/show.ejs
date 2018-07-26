@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 
 	<title>Restaurant Show Page</title>
 </head>
@@ -36,6 +36,12 @@
 
   <h1><%=restaurant.name%></h1>
     <div>
+
+      <%for(let i = 0; i < restaurant.length; i++) {%>
+          <img src="<%=restaurant.id.imageURL%>">
+
+      <%}%>
+
       <h3><%=restaurant.typeOfRestaurant%></h3>
       <h3><%=restaurant.restaurantLocation%></h3>       
       <h3><%=restaurant.zipcode%></h3>       
