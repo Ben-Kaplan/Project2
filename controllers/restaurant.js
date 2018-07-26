@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router  = express.Router();
 const User = require("../models/user.js");
-const Restaurant = require('../models/restaurant');
+const Restaurant = require("../models/restaurant");
+const Reviews = require("../models/restaurant");
 // index route
 router.get("/", async (req, res) => {
   try {
@@ -91,11 +92,14 @@ router.post("/:id/like", async (req, res) => {
   }
 });
 // review route
-router.post("/comment", async (req, res) => {
+router.post("/:id/review", async (req, res) => {
   try {
     if (req.session.loggedIn == true) {
       const createdReview = await Restaurant.create(req.body);
+      console.log(createdReview);
       await Restaurant.reviews.push(createdReview);
+      await Restaurant.reviews.save();
+      console.log(Restaurant.reviews)
       res.redirect("/restaurants/:id");
     } else {
       res.rediect("/auth");

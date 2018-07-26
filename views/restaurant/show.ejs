@@ -33,7 +33,7 @@
   
    
 <!-- Form to show Restaurant info -->
-
+  <img src="<%=restaurant.url%>">
   <h1><%=restaurant.name%></h1>
     <div>
 
@@ -47,7 +47,7 @@
       <h3><%=restaurant.zipcode%></h3>       
       <h3><%=restaurant.price%></h3>       
       <h3><%=restaurant.rating%></h3>
-      <h3><%=restaurant.website%></h3>
+      <a href="<%=restaurant.website%>"><h3><%=restaurant.website%></h3></a>
 
       <%for(let i = 0; i < restaurant.reviews.length; i++) {%>
         <p><%=restaurant.reviews[i].rating%></p>
@@ -57,7 +57,7 @@
        <br>
 
 
-      <form action="/restaurant" method="POST">  
+      <form action="/restaurants/<%=restaurant.id%>/review" method="POST">  
         <label>Rating: 1-4</label>
           <select class="form-control" id="exampleFormControlSelect2" name="rating">
               <option>1</option>
@@ -74,6 +74,11 @@
         </form>
         
         </div>
+        <% for (let i =0; i < restaurant.reviews.length; i++) {%>
+            <p><%=restaurant.reviews[i].rating%></p>
+            <p><%=restaurant.reviews[i].body%></p>
+
+        <%}%>
 
         <section>
           <a href="/restaurants/<%=restaurant.id%>/edit">Edit</a>
