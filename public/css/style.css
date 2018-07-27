@@ -27,7 +27,7 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     width: 1000px;
     margin: 0 auto;
     margin-top: 100px;
-	background-color:rgb(200,200,200, .4);
+	background-color:rgb(19,67,89, .6);
     text-align: center;
 
 }
@@ -51,21 +51,22 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
 
 
 /*Restaurant gallery CSS*/
-/*.container {
-    display: inline-block;
+.restIndex {
+    background-image: url("../img/golden.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
 }
+#gallery {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 40px;
 
-img {
-    width:200px;
-    height:200px;
-    border: 1px solid black;
-    object-fit: cover;
-
-}*/
+}
 
 /*Navbar CSS*/
 .navbar1 {
 	background-color: rgb(232,91,20,.8);
+
 }
 .navbar-nav {
     width: 100%;

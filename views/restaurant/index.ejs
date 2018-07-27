@@ -13,14 +13,17 @@
     <title>Restaurant Index Page</title>
   </head>
    
-  <body>
+  <body class="restIndex">
      <%include ../_navbar.ejs%>
    
    <!-- Jumbotron -->
    <div class="jumbotron">
-      <h1>Restaurant Directory</h1>
-        <p>Restaurant directory - find a restaurant that is dog friendly or add a restaurant that is dog friendly  </p> 
+      <h1 class="display-4" id="opaque">Restaurant Directory</h1>
+        <p class="lead">Dog friendly restaurants - a bunch of words to tell about page! </p> 
       <hr class="my-4">
+        <p class="lead" id="leader">Search for a Restaurant or Zip Code</p>
+        
+      
       
       <div class="container">
         <form action="/restaurants" method="GET">
@@ -30,14 +33,15 @@
             <button type="submit" class="btn btn-secondary btn-lg" value="search">Search</button>
         </form>
         </div>
+         
         <br>
-        <br>
+        <p class="lead" id="leader">Create a New Restaurant Listing</p>
       <a class="btn btn-secondary btn-md" href="/restaurants/new" role="button">Create a New Restaurant</a>
       </p>
     </div>
 
-
-        <div class="container">
+    </div>
+        <div class="container" id="gallery">
           <div class="row imagetiles">
         <%for(let i = 0; i < restaurants.length; i++) {%>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -48,7 +52,6 @@
           <% }%> 
           </div>
         </div>
-
 
 
 
