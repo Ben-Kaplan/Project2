@@ -14,6 +14,7 @@
   </head>
  
  <%include ../_navbar.ejs%>
+
  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-body modal-dialog-centered" role="document">
 
@@ -69,49 +70,61 @@
         </div>
         <hr>
       
+
+  <body class="restaurant-edit"> 
+    <div class="jumbotron">
+      <h1 class="display-4" id="opaque">Update a Restaurant</h1>
+        <p class="lead">Have some additional info to enter for your favorite hanout?</p> 
+      <hr class="my-4">
+      <p class="lead" id="leader">Don't forget to leave a review!</p>
+        
+
      
-    
-      <h2>Restaurant Info:</h2>
-      
+    </div>
+
+    <br>
+    <br>
+    <div class="container">
+       
       <form action="/restaurants/<%=restaurant.id%>?_method=PUT" method="POST">
-        <label>Restaurant Name</label>
+        <label class="edit-label">Restaurant Name</label>
         <input class="form-control" type="text" name="name" value="<%=restaurant.name%>">
         <br>
-         <label>Website</label>
+         <label class="edit-label">Website</label>
          <input class="form-control" type="type" name="website" placeholder="Website">
         <br>
-        <label>City, State</label>
+        <label class="edit-label">City, State</label>
         <input class="form-control" type="text" name="restaurantLocation" placeholder="City, State">
          <br>
         <input class="form-control" type="text" name="zipcade" placeholder="Zip Code">
         <br>
-         <label>Type of Restaurant</label>
+         <label class="edit-label">Type of Restaurant</label>
          <input class="form-control" type="text" name="typeOfRestaurant" placeholder="Type of Restaurant (ex. pizza, coffee, and steak, etc.)">
 
         <br>
-         <h6>Rate the Restaurant</h6>
+         <h6 class="rate-update">Rate the Restaurant</h6><h6></h6>
         <div class="form-check form-check-inline">
        
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">1</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-        <label class="form-check-label" for="inlineRadio2">2</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-        <label class="form-check-label" for="inlineRadio3">3</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
-        <label class="form-check-label" for="inlineRadio4">4</label>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">2</label>
+          </div>
+          <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <label class="form-check-label" for="inlineRadio3">3</label>
+          </div>
+          <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
+          <label class="form-check-label" for="inlineRadio4">4</label>
         </div>
         <br>
         <br>
 
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Price Range:</label>
+          <label class="edit-label" for="exampleFormControlSelect1">Price Range:</label>
           <select class="form-control" id="exampleFormControlSelect1" name="price">
             <option>$</option>
             <option>$$</option>
@@ -121,12 +134,12 @@
         </div>
         
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">Comments</label>
+          <label class="edit-label" for="exampleFormControlTextarea1">Comments</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
        </div>
         <br>
       
-        <button type="submit" class="btn btn-secondary btn-lg">Update Restaurant</button>
+        <button type="submit" class="btn btn-secondary btn-lg" id="btnlg">Update Restaurant</button>
       </form>
     
     </div>
