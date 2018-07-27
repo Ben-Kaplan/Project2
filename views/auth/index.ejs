@@ -11,30 +11,37 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Login/Signup</title>
 </head>
-<body>
+<body class="register-page">
     <%include ../_navbar.ejs%>
 
-    <%= message %>
-    <h1>Register/Login</h1>
-    <h2>Register</h2>
+    <div class="jumbotron">
+      <h1 class="display-4" id="opaque">Register</h1>
+        <p class="lead">Join other dog owners in finding the best dog friendly hangouts in your area!</p> 
+      <hr class="my-4">
+      <p class="lead" id="leader"></p>
+        
+       <%= message %>
+    
+    <div class="container">
     <form action="/auth/register" method="post">
-        username: <input type="text" name="username">
-        password: <input type="password" name="password">
-        <button type="submit">Register</button>
-    </form>
+        <label class="label">username:</label> <input class="form-control-lg" type="text" name="username">
+        <label class="label">password:</label> <input class="form-control-lg" type="password" name="password">
+        
+        <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Register</button>
+        <br>
+        <br>
+        <a class="already-link" data-toggle="modal" href="#exampleModalCenter">Already have an account? Sign In</a>
+    </form> 
+    </div>
+    </div>
+
+
+
+    
     
 
-    <!-- <h2>Login</h2>
-    <form action="/auth/login" method="post">
-        username: <input type="text" name="username">
-        password: <input type="password" name="password">
-        <button type="submit">Login</button>
-    </form>
-    
-    <a href="/auth/google">Sign In with Google</a> -->
 
 
-<a data-toggle="modal" href="#exampleModalCenter">Already have an account? Sign In</a>
 
 <!-- login modal -->
 

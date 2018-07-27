@@ -13,55 +13,55 @@
 	<title>Restaurant Show Page</title>
 </head>
   
-<body>
+<body class="restaurants-show">
    <%include ../_navbar.ejs%>
-	<div>
-  <h1>Restaurant Show Page</h1>
-
-
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/restaurants">Restaurant Index</a>
-          </li>
-        </ul>
-      
-      <hr>
-   
-  
-   
-<!-- Form to show Restaurant info -->
-  <div class="container">
-  <img src="<%=restaurant.url%>">
-  <h1><%=restaurant.name%></h1>
+	
+   <div class="jumbotron">
+      <h1 class="display-4" id="opaque"><%=restaurant.name%></h1>
+        <p class="lead">Dog Friendly Hangouts!</p> 
+      <hr class="my-4">
+             
+      <div class="container">
+        <img src="<%=restaurant.url%>">
+       
     
 
       <%for(let i = 0; i < restaurant.length; i++) {%>
           <img src="<%=restaurant.id.imageURL%>">
 
-      <%}%>
+      <%}%> 
+     </div>
+    </div>
 
-      <h3><%=restaurant.typeOfRestaurant%></h3>
+
+   
+<!-- Form to show Restaurant info -->
+    <br>
+    <br>
+    
+
+    <div class="container">
+      <h3>Type of Restaurant: <%=restaurant.typeOfRestaurant%></h3>
       <h3>State, City: <%=restaurant.restaurantLocation%></h3>       
       <h3>Zip Code: <%=restaurant.zipcode%></h3>       
       <h3>Price Range: <%=restaurant.price%></h3>       
       <h3>Rating: <%=restaurant.rating%></h3>
-      <a href="<%=restaurant.website%>"><h3><%=restaurant.website%></h3></a>
+      <a class="website" href="<%=restaurant.website%>"><h3><%=restaurant.website%></h3></a>
       <h3>Comments: <%=restaurant.comment%></h3>
       <%for(let i = 0; i < restaurant.reviews.length; i++) {%>
         <p><%=restaurant.reviews[i].rating%></p>
         <p><%=restaurant.reviews[i].body%></p>
 
       <%}%>
+     
        <br>
 
 
       <form action="/restaurants/<%=restaurant.id%>/review" method="POST">  
 
-         <h6>Rate the Restaurant</h6>
+       <h6 class="rate-label">Rate the Restaurant:</h6><h6></h6>
         <div class="form-check form-check-inline">
+        
        
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -81,28 +81,20 @@
         <br>
         <br>
         <form action="/restaurants/<%=restaurant.id%>/review" method="POST">  
-        <label>Rating: 1-4</label>
-          <select class="form-control" id="exampleFormControlSelect2" name="rating">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-          </select>  
+        <br> 
         
-          <textarea type="text" name="body" width="200" height="100" placeholder="Review"></textarea>
+        <div class="form-group">
+         <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="3">Write a Review</textarea>
+        </div>
+          
+         
           <br>
           <br>
-      
-          <button type="submit">Submit</button>
+        <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Submit</button>
+         
         </form>
 
-          <br>
-          <br>
-      
-          <button type="submit">Submit</button>
-        </form>
-        
-       
+            
         <% for (let i =0; i < restaurant.reviews.length; i++) {%>
             <p><%=restaurant.reviews[i].rating%></p>
             <p><%=restaurant.reviews[i].body%></p>
@@ -110,16 +102,17 @@
         <%}%>
         <br>
         <section>
-          <a href="/restaurants/<%=restaurant.id%>/edit">Edit</a>
+          <a class="edit-restaurant" href="/restaurants/<%=restaurant.id%>/edit">Edit Restaurant</a>
         </section>
-        <br>
+      
         <section>
           <form action="/restaurants/<%=restaurant.id%>?_method=DELETE" method="post">
-              <input type="submit" value="Delete Restaurant"/>
+              <input class="btn btn-secondary btn-lg" id="btnlg" type="submit" value="Delete Restaurant"/>
           </form>
         </section>
       </div>
        </div>
+        </div>
     <!-- Optional JavaScript -->
 
 

@@ -30,24 +30,29 @@
             <input class="form-control-lg" type="text" name="name" placeholder="Restaurant Name">
             <input class="form-control-lg" type="text" name="zipcode" placeholder="Your Zipcode">
             <!-- <input type="submit" value="Search"> -->
-            <button type="submit" class="btn btn-secondary btn-lg" value="search">Search</button>
+            <button type="submit" class="btn btn-secondary btn-lg" id="btnlg" value="search">Search</button>
         </form>
         </div>
          
         <br>
         <p class="lead" id="leader">Create a New Restaurant Listing</p>
-      <a class="btn btn-secondary btn-md" href="/restaurants/new" role="button">Create a New Restaurant</a>
+      <a class="btn btn-secondary btn-md" id="btnlg" href="/restaurants/new" role="button">Create a New Restaurant</a>
       </p>
     </div>
 
     </div>
         <div class="container" id="gallery">
-          <div class="row imagetiles">
+          <div class="row display-flex">
         <%for(let i = 0; i < restaurants.length; i++) {%>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
               <a href="/restaurants" class="d-block mb-4 h-100">     
               <img class="img-fluid img-thumbnail" src="<%=restaurants[i].url%>"> </a>
-              <a href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
+              
+          <div class="caption">
+            <a class="restText" href="/restaurants/<%=restaurants[i].id%>"><%=restaurants[i].name%></a>
+          </div>
+
+
             </div>
           <% }%> 
           </div>
