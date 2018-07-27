@@ -17,12 +17,14 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     -o-background-size: cover;
     background-size: cover;
 }
-#box {
+/*#box {
     background-color: pink;
     padding: 50px;
     margin-top: 25px;
     border-radius: 20px;
-}
+}*/
+
+/*Jumbotron*/
 .jumbotron {
     width: 1000px;
     margin: 0 auto;
@@ -31,10 +33,15 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     text-align: center;
 
 }
-.btn btn-primary btn-lg {
-	color: #E85B14;
+#btnlg {
+    background-color: rgb(232,91,20,.8);
 }
 
+.register-page {
+    background-image: url("../img/dogsAllowed.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+}
 /*Search */
 .search {
     display: center;
@@ -48,8 +55,14 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     color: white;
 
 }
-
-
+/*Register*/
+.label {
+    color: white;
+        font-size: 26px;
+}
+.already-link {
+    color: rgb(232,91,20,.8);
+}
 /*Restaurant gallery CSS*/
 .restIndex {
     background-image: url("../img/golden.jpg");
@@ -62,19 +75,97 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     margin-top: 40px;
 
 }
+.row display-flex{
+    /*position: relative;*/
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.caption {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.restText {
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+/*Create a new restaurant*/
+.create {
+    background-image: url("../img/dogPizza.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+.rate-label {
+    color: white;
+    font-size: 20px;
+    display: inline; 
+}
+.form-check-label {
+    color: white;
+    font-size: 20px; 
+}
+.textarea-review {
+
+}
+/*update a restaurant*/
+.restaurant-edit {
+    background-image: url("../img/puppy2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+}
+.edit-label {
+    color: white;
+    font-size: 20px;
+    display: inline;
+}
+.rate-update {
+    color: white;
+    font-size: 20px;
+    display: inline;
+}
+/*Show page for Restaurant*/
+.restaurants-show {
+    /*background-image: url("../img/dogPizza.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;*/
+    background-color: #537686;
+}
+h3 {
+    text-align: center;
+}
+.website {
+    color: rgb(232,91,20,.8);
+}
+.edit-restaurant {
+    color: rgb(232,91,20,.8);
+    font-size: 28px;
+}
 /*Navbar CSS*/
+/*#nav-logout {
+    float: right;
+}*/
+.navbar-item li a {
+  text-align: right;
+}
+
+
 .navbar1 {
 	background-color: rgb(232,91,20,.8);
 
 }
 .navbar-nav {
     width: 100%;
-    text-align: center;
+    /*text-align: center;*/
 }
 .nav-link {
 	color: white;
-
+    text-align: right;
 }
 
 

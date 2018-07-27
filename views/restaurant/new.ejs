@@ -8,42 +8,48 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 
   <title>Create Restaurant</title>
 
 </head>
- <body>
+ <body class="create">
   <%include ../_navbar.ejs%>
 
-  <div class="container new-restaurant">
-    <h1>Create a Restaurant Entry</h1>
-    
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/restaurants">Restaurant Index</a></li>
-      </ul>
-   
-  <hr>
 
- 
+<div class="jumbotron">
+      <h1 class="display-4" id="opaque">Create a Restaurant</h1>
+        <p class="lead">Enter your Favorite Dog Friendly Hangouts!</p> 
+      <hr class="my-4">
+      <p class="lead" id="leader">Don't forget to leave a review!</p>
+        
+     
+    </div>
+
+<br>
+<br>
+<br>
+
+  <div class="container new-restaurant">
+   
+    
     <form action="/restaurants" method="POST">
       
-      <input type="text" name="name" placeholder="Name of the Restaurant"><br>
-      <br>
-      <input type="text" name="restaurantLocation" placeholder="City, State"><br>
-      <br>
-      <input type="text" name="zipcode" placeholder="Zip Code"><br>
-      <br>
-      <input type="text" name="typeOfRestaurant" placeholder="Type of Restaurant"><br>
-      <br>
-      <input type="text" name="url" placeholder="Image URL"><br>
-      <br>
-      <input type="text" name="website" placeholder="Website"><br>
-      <br>
-      <input type="number" name="price" placeholder="Price Range"><br>
-      <br>
-       <h6>Rate the Restaurant</h6>
+      <input class="form-control" type="text" name="name" placeholder="Name of the Restaurant"><br>
+     
+      <input class="form-control" type="text" name="restaurantLocation" placeholder="City, State"><br>
+      
+      <input class="form-control" type="text" name="zipcode" placeholder="Zip Code"><br>
+      
+      <input class="form-control" type="text" name="typeOfRestaurant" placeholder="Type of Restaurant"><br>
+      
+      <input class="form-control" type="text" name="url" placeholder="Image URL"><br>
+     
+      <input class="form-control" type="text" name="website" placeholder="Website"><br>
+     
+      <input class="form-control" type="number" name="price" placeholder="Price Range"><br>
+      
+       <h6 class="rate-label">Rate the Restaurant:</h6><h6></h6>
       <div class="form-check form-check-inline">
        
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -64,10 +70,15 @@
       <br>
       <br>
 
-      <textarea type="text" name="review" width="200" height="200" placeholder="Write a Review"></textarea><br>
+      <div class="form-group">
+         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Write a Review</textarea>
+      </div>
+      
       <br>
-      <br>
-      <button type="submit">Add Restaurant</button>
+     
+      
+      <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Add Restaurant</button>
+
     </form>
 
  </div>
