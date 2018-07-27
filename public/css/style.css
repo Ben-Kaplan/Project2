@@ -97,9 +97,9 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     text-align: center;
 }
 .restText {
-    color: black;
+    color: white;
     font-weight: bold;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 /*Create a new restaurant*/
