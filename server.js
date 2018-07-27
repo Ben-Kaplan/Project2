@@ -4,7 +4,6 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const morgan = require("morgan");
-const port = 3000;
 const passport = require("passport");
 const restaurantController = require("./controllers/restaurant.js");
 const userController = require("./controllers/user.js");
@@ -39,7 +38,7 @@ app.use("/auth", authController);
 app.get("/", (req, res) => {
 	res.render("index.ejs");
 });
-
+const port = process.env.PORT || 3000
 app.listen(port, () => {
 	console.log("Howdy Cowboy");
 });
