@@ -1,87 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-	
-	<title>Home page</title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <title>Home page</title>
 </head>
 
 <body class="home-page">
-	<%include _navbar.ejs%>
-	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-body modal-dialog-centered" role="document">
+  <%include _navbar.ejs%>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-body modal-dialog-centered" role="document">
 
-      <div class="login-form">
-      
+        <div class="login-form">
 
-        <form action="/auth/login" method="post">
-          
-          <button class="close" data-dismiss="modal">X</button>
-          
-          <h2 class="text-center">Sign in</h2> 
 
-          <div class="form-group"> 
-            <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="username" placeholder="Username" required="required">       
+          <form action="/auth/login" method="post">
+
+            <button class="close" data-dismiss="modal">X</button>
+
+            <h2 class="text-center">Sign in</h2>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" class="form-control" name="password" placeholder="Password" required="required">       
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+              </div>
             </div>
-          </div>        
-          <div class="form-group">
+            <div class="form-group">
               <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
-          </div>
-          
-          <div class="or-seperator"><i>or</i></div>
-          <p class="text-center">Login with Google</p>
-          <div class="text-center social-btn">
-            <a href="/auth/google" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
-            
+            </div>
 
-          </div>
-        </form>
-        <p class="text-center text-muted small">Don't have an account? <a href="/auth">Sign up here!</a></p>
+            <div class="or-seperator">
+              <i>or</i>
+            </div>
+            <p class="text-center">Login with Google</p>
+            <div class="text-center social-btn">
+              <a href="/auth/google" class="btn btn-danger">
+                <i class="fa fa-google"></i>&nbsp; Google</a>
+
+
+            </div>
+          </form>
+          <p class="text-center text-muted small">Don't have an account?
+            <a href="/auth">Sign up here!</a>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-	
-	<!-- Jumbotron -->
-	
-		<div class="jumbotron">
-			<h1 class="display-4" id="opaque">Dog Hangs</h1>
-				<p class="lead">Bringing your fuzzy buddy out to eat? - No problem. We've got you covered. </p> 
-			<hr class="my-4">
 
-				<p class="display">View local dog-friendly restaurants or add your own discoveries.</p>
+    <!-- Jumbotron -->
+
+    <div class="jumbotron">
+      <h1 class="display-4" id="opaque">Dog Hangs</h1>
+      <p class="lead">Bringing your fuzzy buddy out to eat? - No problem. We've got you covered. </p>
+      <hr class="my-4">
+
+      <p class="display">View local dog-friendly restaurants or add your own discoveries.</p>
 
 
-				<p class="lead" id="leader">
+      <p class="lead" id="leader">
 
-			
-			<a class="btn btn-secondary btn-lg" id="btnlg" href="/auth" role="button">Login/Signup</a>
-			</p>
-		</div>
-	
+
+        <a class="btn btn-secondary btn-lg" id="btnlg" href="/auth" role="button">Login/Signup</a>
+      </p>
+    </div>
 
 
 
- <!-- Optional JavaScript -->
+
+    <!-- Optional JavaScript -->
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+      crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,188 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
 
-	<title>Restaurant Show Page</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+  <title>Restaurant Show Page</title>
 </head>
-  
+
 <body class="restaurants-show">
-   <%include ../_navbar.ejs%>
+  <%include ../_navbar.ejs%>
 
-   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-body modal-dialog-centered" role="document">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-body modal-dialog-centered" role="document">
 
-      <div class="login-form">
-      
+        <div class="login-form">
 
-        <form action="/auth/login" method="post">
-          
-          <button class="close" data-dismiss="modal">X</button>
-          
-          <h2 class="text-center">Sign in</h2> 
 
-          <div class="form-group"> 
-            <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="username" placeholder="Username" required="required">       
+          <form action="/auth/login" method="post">
+
+            <button class="close" data-dismiss="modal">X</button>
+
+            <h2 class="text-center">Sign in</h2>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" class="form-control" name="password" placeholder="Password" required="required">       
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+              </div>
             </div>
-          </div>        
-          <div class="form-group">
+            <div class="form-group">
               <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
-          </div>
-          
-          <div class="or-seperator"><i>or</i></div>
-          <p class="text-center">Login with Google</p>
-          <div class="text-center social-btn">
-            <a href="/auth/google" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
-            
+            </div>
 
-          </div>
-        </form>
-        <p class="text-center text-muted small">Don't have an account? <a href="/auth">Sign up here!</a></p>
-      </div>
-    </div>
-  </div>
-	<div>
-  <h1>Restaurant Show Page</h1>
+            <div class="or-seperator">
+              <i>or</i>
+            </div>
+            <p class="text-center">Login with Google</p>
+            <div class="text-center social-btn">
+              <a href="/auth/google" class="btn btn-danger">
+                <i class="fa fa-google"></i>&nbsp; Google</a>
 
 
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/restaurants">Restaurant Index</a>
-          </li>
-        </ul>
-      
-      <hr>
-   
-  
-   
-<!-- Form to show Restaurant info -->
-  <div class="container">
-  <img src="<%=restaurant.url%>">
-  <h1><%=restaurant.name%></h1>
-
-	
-   <div class="jumbotron">
-      <h1 class="display-4" id="opaque"><%=restaurant.name%></h1>
-        <p class="lead">Dog Friendly Hangouts!</p> 
-      <hr class="my-4">
-             
-      <div class="container">
-        <img src="<%=restaurant.url%>">
-       
-
-    
-
-      <%for(let i = 0; i < restaurant.length; i++) {%>
-          <img src="<%=restaurant.id.imageURL%>">
-
-      <%}%> 
-     </div>
-    </div>
-
-
-   
-<!-- Form to show Restaurant info -->
-    <br>
-    <br>
-    
-
-    <div class="container">
-      <h3>Type of Restaurant: <%=restaurant.typeOfRestaurant%></h3>
-      <h3>State, City: <%=restaurant.restaurantLocation%></h3>       
-      <h3>Zip Code: <%=restaurant.zipcode%></h3>       
-      <h3>Price Range: <%=restaurant.price%></h3>       
-      <h3>Rating: <%=restaurant.rating%></h3>
-      <a class="website" href="<%=restaurant.website%>"><h3><%=restaurant.website%></h3></a>
-      <h3>Comments: <%=restaurant.comment%></h3>
-      <%for(let i = 0; i < restaurant.reviews.length; i++) {%>
-        <p><%=restaurant.reviews[i].rating%></p>
-        <p><%=restaurant.reviews[i].body%></p>
-
-      <%}%>
-     
-       <br>
-
-
-      <form action="/restaurants/<%=restaurant.id%>/review" method="POST">  
-
-       <h6 class="rate-label">Rate the Restaurant:</h6><h6></h6>
-        <div class="form-check form-check-inline">
-        
-       
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">1</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-        <label class="form-check-label" for="inlineRadio2">2</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-        <label class="form-check-label" for="inlineRadio3">3</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
-        <label class="form-check-label" for="inlineRadio4">4</label>
-        </div>
-        <br>
-        <br>
-        <form action="/restaurants/<%=restaurant.id%>/review" method="POST">  
-        <br> 
-        
-        <div class="form-group">
-         <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="3">Write a Review</textarea>
-        </div>
-          
-         
-          <br>
-          <br>
-        <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Submit</button>
-         
-        </form>
-
-            
-        <% for (let i =0; i < restaurant.reviews.length; i++) {%>
-            <p><%=restaurant.reviews[i].rating%></p>
-            <p><%=restaurant.reviews[i].body%></p>
-
-        <%}%>
-        <br>
-        <section>
-          <a class="edit-restaurant" href="/restaurants/<%=restaurant.id%>/edit">Edit Restaurant</a>
-        </section>
-      
-        <section>
-          <form action="/restaurants/<%=restaurant.id%>?_method=DELETE" method="post">
-              <input class="btn btn-secondary btn-lg" id="btnlg" type="submit" value="Delete Restaurant"/>
+            </div>
           </form>
-        </section>
-      </div>
-       </div>
+          <p class="text-center text-muted small">Don't have an account?
+            <a href="/auth">Sign up here!</a>
+          </p>
         </div>
+      </div>
+    </div>
+
+    <!-- Form to show Restaurant info -->
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" id="opaque">
+          <%=restaurant.name%>
+        </h1>
+        <p class="lead">Dog Friendly Hangouts!</p>
+        <hr class="my-4">
+
+        <div class="container">
+          <img src="<%=restaurant.url%>">
+
+
+
+
+          <%for(let i = 0; i < restaurant.length; i++) {%>
+            <img src="<%=restaurant.id.imageURL%>">
+
+            <%}%>
+        </div>
+      </div>
+
+
+
+      <!-- Form to show Restaurant info -->
+      <br>
+      <br>
+
+
+      <div class="container">
+        <h3>Type of Restaurant:
+          <%=restaurant.typeOfRestaurant%>
+        </h3>
+        <h3>State, City:
+          <%=restaurant.restaurantLocation%>
+        </h3>
+        <h3>Zip Code:
+          <%=restaurant.zipcode%>
+        </h3>
+        <h3>Price Range:
+          <%=restaurant.price%>
+        </h3>
+        <h3>Rating:
+          <%=restaurant.rating%>
+        </h3>
+        <a class="website" href="<%=restaurant.website%>">
+          <h3>
+            <%=restaurant.website%>
+          </h3>
+        </a>
+        <h3>Comments:
+          <%=restaurant.comment%>
+        </h3>
+        <%for(let i = 0; i < restaurant.reviews.length; i++) {%>
+          <p>
+            <%=restaurant.reviews[i].rating%>
+          </p>
+          <p>
+            <%=restaurant.reviews[i].body%>
+          </p>
+
+          <%}%>
+
+            <br>
+
+
+            <form action="/restaurants/<%=restaurant.id%>/review" method="POST">
+
+              <h6 class="rate-label">Rate the Restaurant:</h6>
+              <h6></h6>
+              <div class="form-check form-check-inline">
+
+
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <label class="form-check-label" for="inlineRadio3">3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
+                <label class="form-check-label" for="inlineRadio4">4</label>
+              </div>
+              <br>
+              <br>
+              <form action="/restaurants/<%=restaurant.id%>/review" method="POST">
+                <br>
+
+                <div class="form-group">
+                  <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="3">Write a Review</textarea>
+                </div>
+
+
+                <br>
+                <br>
+                <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Submit</button>
+
+              </form>
+
+
+              <% for (let i =0; i < restaurant.reviews.length; i++) {%>
+                <p>
+                  <%=restaurant.reviews[i].rating%>
+                </p>
+                <p>
+                  <%=restaurant.reviews[i].body%>
+                </p>
+
+                <%}%>
+                  <br>
+                  <section>
+                    <a class="edit-restaurant" href="/restaurants/<%=restaurant.id%>/edit">Edit Restaurant</a>
+                  </section>
+
+                  <section>
+                    <form action="/restaurants/<%=restaurant.id%>?_method=DELETE" method="post">
+                      <input class="btn btn-secondary btn-lg" id="btnlg" type="submit" value="Delete Restaurant" />
+                    </form>
+                  </section>
+      </div>
+    </div>
+    </div>
     <!-- Optional JavaScript -->
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+      crossorigin="anonymous"></script>
 </body>
+
 </html>

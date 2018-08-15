@@ -1,94 +1,112 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-  
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
   <title>Create Restaurant</title>
 
 </head>
- <body class="create">
+
+<body class="create">
   <%include ../_navbar.ejs%>
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-body modal-dialog-centered" role="document">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-body modal-dialog-centered" role="document">
 
-      <div class="login-form">
-      
+        <div class="login-form">
 
-        <form action="/auth/login" method="post">
-          
-          <button class="close" data-dismiss="modal">X</button>
-          
-          <h2 class="text-center">Sign in</h2> 
 
-          <div class="form-group"> 
-            <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="username" placeholder="Username" required="required">       
+          <form action="/auth/login" method="post">
+
+            <button class="close" data-dismiss="modal">X</button>
+
+            <h2 class="text-center">Sign in</h2>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" class="form-control" name="password" placeholder="Password" required="required">       
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+              </div>
             </div>
-          </div>        
-          <div class="form-group">
+            <div class="form-group">
               <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
-          </div>
-          
-          <div class="or-seperator"><i>or</i></div>
-          <p class="text-center">Login with Google</p>
-          <div class="text-center social-btn">
-            <a href="/auth/google" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
-            
+            </div>
 
-          </div>
-        </form>
-        <p class="text-center text-muted small">Don't have an account? <a href="/auth">Sign up here!</a></p>
+            <div class="or-seperator">
+              <i>or</i>
+            </div>
+            <p class="text-center">Login with Google</p>
+            <div class="text-center social-btn">
+              <a href="/auth/google" class="btn btn-danger">
+                <i class="fa fa-google"></i>&nbsp; Google</a>
+
+
+            </div>
+          </form>
+          <p class="text-center text-muted small">Don't have an account?
+            <a href="/auth">Sign up here!</a>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
 
-<div class="jumbotron">
+    <div class="jumbotron">
       <h1 class="display-4" id="opaque">Create a Restaurant</h1>
-        <p class="lead">Enter your Favorite Dog Friendly Hangouts!</p> 
+      <p class="lead">Enter your Favorite Dog Friendly Hangouts!</p>
       <hr class="my-4">
       <p class="lead" id="leader">Don't forget to leave a review!</p>
-        
-     
+
+
     </div>
 
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
 
-  <div class="container new-restaurant">
-   
-    
-    <form action="/restaurants" method="POST">
-      
-      <input class="form-control" type="text" name="name" placeholder="Name of the Restaurant"><br>
-     
-      <input class="form-control" type="text" name="restaurantLocation" placeholder="City, State"><br>
-      
-      <input class="form-control" type="text" name="zipcode" placeholder="Zip Code"><br>
-      
-      <input class="form-control" type="text" name="typeOfRestaurant" placeholder="Type of Restaurant"><br>
-      
-      <input class="form-control" type="text" name="url" placeholder="Image URL"><br>
-     
-      <input class="form-control" type="text" name="website" placeholder="Website"><br>
-      
+    <div class="container new-restaurant">
 
-      <div class="form-group">
+
+      <form action="/restaurants" method="POST">
+
+        <input class="form-control" type="text" name="name" placeholder="Name of the Restaurant">
+        <br>
+
+        <input class="form-control" type="text" name="restaurantLocation" placeholder="City, State">
+        <br>
+
+        <input class="form-control" type="text" name="zipcode" placeholder="Zip Code">
+        <br>
+
+        <input class="form-control" type="text" name="typeOfRestaurant" placeholder="Type of Restaurant">
+        <br>
+
+        <input class="form-control" type="text" name="url" placeholder="Image URL">
+        <br>
+
+        <input class="form-control" type="text" name="website" placeholder="Website">
+        <br>
+
+
+        <div class="form-group">
           <label class="edit-label" for="exampleFormControlSelect1">Price Range:</label>
           <select class="form-control" id="exampleFormControlSelect1" name="price">
             <option>$</option>
@@ -98,49 +116,53 @@
           </select>
         </div>
 
-       <h6 class="rate-label">Rate the Restaurant:</h6><h6></h6>
-      <div class="form-check form-check-inline">
-       
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">1</label>
+        <h6 class="rate-label">Rate the Restaurant:</h6>
+        <h6></h6>
+        <div class="form-check form-check-inline">
+
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">1</label>
         </div>
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-        <label class="form-check-label" for="inlineRadio2">2</label>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">2</label>
         </div>
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-        <label class="form-check-label" for="inlineRadio3">3</label>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <label class="form-check-label" for="inlineRadio3">3</label>
         </div>
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
-        <label class="form-check-label" for="inlineRadio4">4</label>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
+          <label class="form-check-label" for="inlineRadio4">4</label>
         </div>
-      <br>
-      <br>
+        <br>
+        <br>
 
-      <div class="form-group">
-         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Write a Review</textarea>
-      </div>
-      
-      <br>
-     
-      
-      <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Add Restaurant</button>
+        <div class="form-group">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Write a Review</textarea>
+        </div>
 
-    </form>
-
- </div>
+        <br>
 
 
+        <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Add Restaurant</button>
 
-<!-- Optional JavaScript -->
+      </form>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+      crossorigin="anonymous"></script>
 
 </body>
 

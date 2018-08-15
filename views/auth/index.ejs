@@ -1,102 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Login/Signup</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Login/Signup</title>
 </head>
+
 <body class="register-page">
-    <%include ../_navbar.ejs%>
+  <%include ../_navbar.ejs%>
 
     <div class="jumbotron">
       <h1 class="display-4" id="opaque">Register</h1>
-        <p class="lead">Join other dog owners in finding the best dog friendly hangouts in your area!</p> 
+      <p class="lead">Join other dog owners in finding the best dog friendly hangouts in your area!</p>
       <hr class="my-4">
       <p class="lead" id="leader"></p>
-        
-       <%= message %>
-    
-    <div class="container">
-    <form action="/auth/register" method="post">
-        <label class="label">username:</label> <input class="form-control-lg" type="text" name="username">
-        <label class="label">password:</label> <input class="form-control-lg" type="password" name="password">
-        
-        <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Register</button>
-        <br>
-        <br>
-        <a class="already-link" data-toggle="modal" href="#exampleModalCenter">Already have an account? Sign In</a>
-    </form> 
+
+      <%= message %>
+
+        <div class="container">
+          <form action="/auth/register" method="post">
+            <label class="label">username:</label>
+            <input class="form-control-lg" type="text" name="username">
+            <label class="label">password:</label>
+            <input class="form-control-lg" type="password" name="password">
+
+            <button class="btn btn-secondary btn-lg" id="btnlg" role="submit">Register</button>
+            <br>
+            <br>
+            <a class="already-link" data-toggle="modal" href="#exampleModalCenter">Already have an account? Sign In</a>
+          </form>
+        </div>
     </div>
-    </div>
+  <!-- login modal -->
+    </head>
+
+    <body>
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-body modal-dialog-centered" role="document">
+
+          <div class="login-form">
 
 
+            <form action="/auth/login" method="post">
 
-    
-    
+              <button class="close" data-dismiss="modal">X</button>
+
+              <h2 class="text-center">Sign in</h2>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                  <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
+              </div>
+
+              <div class="or-seperator">
+                <i>or</i>
+              </div>
+              <p class="text-center">Login with Google</p>
+              <div class="text-center social-btn">
+                <a href="/auth/google" class="btn btn-danger">
+                  <i class="fa fa-google"></i>&nbsp; Google</a>
 
 
-
-
-<!-- login modal -->
-
-</head>
-
-<body>
-
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-body modal-dialog-centered" role="document">
-
-      <div class="login-form">
-      
-
-        <form action="/auth/login" method="post">
-          
-          <button class="close" data-dismiss="modal">X</button>
-          
-          <h2 class="text-center">Sign in</h2> 
-
-          <div class="form-group"> 
-            <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="username" placeholder="Username" required="required">       
-            </div>
+              </div>
+            </form>
+            <p class="text-center text-muted small">Don't have an account?
+              <a href="/auth">Sign up here!</a>
+            </p>
           </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" class="form-control" name="password" placeholder="Password" required="required">       
-            </div>
-          </div>        
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
-          </div>
-          
-          <div class="or-seperator"><i>or</i></div>
-          <p class="text-center">Login with Google</p>
-          <div class="text-center social-btn">
-            <a href="/auth/google" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
-            
-
-          </div>
-        </form>
-        <p class="text-center text-muted small">Don't have an account? <a href="/auth">Sign up here!</a></p>
+        </div>
       </div>
-    </div>
-  </div>
 
 
-    <!-- Optional JavaScript -->
+      <!-- Optional JavaScript -->
 
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-</body>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    </body>
+
 </html>

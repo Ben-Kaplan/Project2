@@ -1,68 +1,84 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
   <title>Create User Profile</title>
 
 </head>
 
 <body>
-    <%include ../_navbar.ejs%>
-  
+  <%include ../_navbar.ejs%>
+
     <h1>User Profile</h1>
-   
+
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/restaurants">Restaurant Index</a></li>
-      </ul>
-   <hr>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/restaurants">Restaurant Index</a>
+      </li>
+    </ul>
+    <hr>
 
-      <form action="/users" method="POST">
-        
-        <!-- would like this to auto-populate -->
-        <input type="text" name="username" placeholder="username"><br>
-        <br>
-        <input type="text" name="email" placeholder="Email"><br>
-        <br>
-        <!-- can they change their password? -->
-        <input type="password" name="password" placeholder="password"><br>
-        <br>
+    <form action="/users" method="POST">
+
+      <!-- would like this to auto-populate -->
+      <input type="text" name="username" placeholder="username">
+      <br>
+      <br>
+      <input type="text" name="email" placeholder="Email">
+      <br>
+      <br>
+      <!-- can they change their password? -->
+      <input type="password" name="password" placeholder="password">
+      <br>
+      <br>
 
 
-        <input type="text" name="name" placeholder="Name"><br>
-        <br>
-        <input type="text" name="stateAndCity" placeholder="State and City"><br>
-        <br>
-        <input type="text" name="zipcode" placeholder="Zip Code"><br>
-        <br>  
-        
-        <textarea type="text" name="bio" width="200" height="100" placeholder="Bio"></textarea>
-        <br>
-        <br>
-        <input type="text" name="animalName" placeholder="Dogs name"><br>
-        <br>
-        
-        <button type="submit">Save Profile</button>
-      </form>
+      <input type="text" name="name" placeholder="Name">
+      <br>
+      <br>
+      <input type="text" name="stateAndCity" placeholder="State and City">
+      <br>
+      <br>
+      <input type="text" name="zipcode" placeholder="Zip Code">
+      <br>
+      <br>
+
+      <textarea type="text" name="bio" width="200" height="100" placeholder="Bio"></textarea>
+      <br>
+      <br>
+      <input type="text" name="animalName" placeholder="Dogs name">
+      <br>
+      <br>
+
+      <button type="submit">Save Profile</button>
+    </form>
     </div>
 
 
 
-<!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+      crossorigin="anonymous"></script>
 
 </body>
 

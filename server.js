@@ -23,7 +23,9 @@ require('./db/db');
 
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(session({
     secret: "tacosburritosandspaghetti",
     saveUninitialized: false
@@ -36,9 +38,9 @@ app.use("/users", userController);
 app.use("/auth", authController);
 
 app.get("/", (req, res) => {
-	res.render("index.ejs");
+    res.render("index.ejs");
 });
 const port = process.env.PORT || 3000
 app.listen(port, () => {
-	console.log("Howdy Cowboy");
+    console.log("Howdy Cowboy");
 });

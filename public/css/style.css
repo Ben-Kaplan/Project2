@@ -1,4 +1,5 @@
 /*Restaurant Edit view*/
+
 /*.restaurant-edit-ejs {
 	background-image: url("/img/frenchieBreakfast.jpg");
 	background-repeat: no-repeat;
@@ -8,15 +9,17 @@
 
     background-attachment: fixed;
 }*/
-/*Home page view*/
-.home-page {
 
-background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/shutterstock_112117622.jpg) no-repeat center center fixed; 
+/*Home page view*/
+
+.home-page {
+    background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/shutterstock_112117622.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
 /*#box {
     background-color: pink;
     padding: 50px;
@@ -25,65 +28,69 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
 }*/
 
 /*Jumbotron*/
+
 .jumbotron {
     width: 1000px;
     margin: 0 auto;
     margin-top: 100px;
-	background-color:rgb(19,67,89, .6);
+    background-color: rgb(19, 67, 89, .6);
     text-align: center;
-
 }
+
 #btnlg {
-    background-color: rgb(232,91,20,.8);
+    background-color: rgb(232, 91, 20, .8);
 }
 
 .register-page {
     background-image: url("../img/dogsAllowed.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 /*Search */
+
 .search {
     display: center;
-
 }
+
 .lead {
     color: white;
-
 }
+
 #opaque {
     color: white;
-
 }
 
 .display {
     color: white;
 }
 
-
-
 /*Register*/
+
 .label {
     color: white;
-        font-size: 26px;
+    font-size: 26px;
 }
+
 .already-link {
-    color: rgb(232,91,20,.8);
+    color: rgb(232, 91, 20, .8);
 }
 
 /*Restaurant gallery CSS*/
+
 .restIndex {
     background-image: url("../img/golden.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 #gallery {
     width: 1000px;
     margin: 0 auto;
     margin-top: 40px;
-
 }
-.row display-flex{
+
+.row display-flex {
     /*position: relative;*/
     display: flex;
     flex-wrap: wrap;
@@ -96,6 +103,7 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
     width: 100%;
     text-align: center;
 }
+
 .restText {
     color: white;
     font-weight: bold;
@@ -103,139 +111,163 @@ background: url(https://media2.fdncms.com/metrotimes/imager/u/original/3895672/s
 }
 
 /*Create a new restaurant*/
+
 .create {
     background-image: url("../img/dogPizza.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 .rate-label {
     color: white;
     font-size: 20px;
-    display: inline; 
+    display: inline;
 }
+
 .form-check-label {
     color: white;
-    font-size: 20px; 
+    font-size: 20px;
 }
-.textarea-review {
 
-}
+.textarea-review {}
+
 /*update a restaurant*/
+
 .restaurant-edit {
     background-image: url("../img/puppy2.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 .edit-label {
     color: white;
     font-size: 20px;
     display: inline;
 }
+
 .rate-update {
     color: white;
     font-size: 20px;
     display: inline;
 }
+
 /*Show page for Restaurant*/
+
 .restaurants-show {
-    /*background-image: url("../img/dogPizza.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;*/
-    background-color: #537686;
+    background-image: url("../img/dogPizza.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: #537686; */
 }
+
 h3 {
     text-align: center;
 }
+
 .website {
-    color: rgb(232,91,20,.8);
+    color: rgb(232, 91, 20, .8);
 }
+
 .edit-restaurant {
-    color: rgb(232,91,20,.8);
+    color: rgb(232, 91, 20, .8);
     font-size: 28px;
 }
+
 /*Navbar CSS*/
+
 /*#nav-logout {
     float: right;
 }*/
-.navbar-item li a {
-  text-align: right;
-}
 
+.navbar-item li a {
+    text-align: right;
+}
 
 .navbar1 {
-	background-color: rgb(232,91,20,.8);
-
+    background-color: rgb(232, 91, 20, .8);
 }
+
 .navbar-nav {
     width: 100%;
     /*text-align: center;*/
 }
+
 .nav-link {
-	color: white;
+    color: white;
     text-align: right;
 }
 
-
 img {
-    height:400px;
+    height: 400px;
     width: 400px;
     object-fit: contain;
 }
 
 /*Login form modal CSS*/
+
 .login-form {
-		width: 385px;
-		margin: 30px auto;
-	}
-    .login-form form {        
-    	margin-bottom: 15px;
-        background: #f7f7f7;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        padding: 30px;
-    }
-    .login-form h2 {
-        margin: 0 0 15px;
-    }
-    .form-control, .login-btn {
-        min-height: 38px;
-        border-radius: 2px;
-    }
-    .input-group-addon .fa {
-        font-size: 18px;
-    }
-    .login-btn {
-        font-size: 15px;
-        font-weight: bold;
-    }
-	.social-btn .btn {
-		border: none;
-        margin: 10px 3px 0;
-        opacity: 1;
-	}
-    .social-btn .btn:hover {
-        opacity: 0.9;
-    }
-	.social-btn .btn-primary {
-        background: #507cc0;
-    }
-	.social-btn .btn-info {
-		background: #64ccf1;
-	}
-	.social-btn .btn-danger {
-		background: #df4930;
-	}
-    .or-seperator {
-        margin-top: 20px;
-        text-align: center;
-        border-top: 1px solid #ccc;
-    }
-    .or-seperator i {
-        padding: 0 10px;
-        background: #f7f7f7;
-        position: relative;
-        top: -11px;
-        z-index: 1;
-    }  
+    width: 385px;
+    margin: 30px auto;
+}
 
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
 
+.login-form h2 {
+    margin: 0 0 15px;
+}
+
+.form-control,
+.login-btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+
+.input-group-addon .fa {
+    font-size: 18px;
+}
+
+.login-btn {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.social-btn .btn {
+    border: none;
+    margin: 10px 3px 0;
+    opacity: 1;
+}
+
+.social-btn .btn:hover {
+    opacity: 0.9;
+}
+
+.social-btn .btn-primary {
+    background: #507cc0;
+}
+
+.social-btn .btn-info {
+    background: #64ccf1;
+}
+
+.social-btn .btn-danger {
+    background: #df4930;
+}
+
+.or-seperator {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.or-seperator i {
+    padding: 0 10px;
+    background: #f7f7f7;
+    position: relative;
+    top: -11px;
+    z-index: 1;
+}

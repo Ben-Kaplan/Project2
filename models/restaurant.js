@@ -11,7 +11,6 @@ const restaurantSchema = new mongoose.Schema({
 	rating: Number,
 	website: String,
 	reviews: [Reviews.schema],
-
 	url: String, 
 });
 

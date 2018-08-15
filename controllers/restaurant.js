@@ -6,8 +6,6 @@ const Reviews = require("../models/reviews.js");
 // index route
 router.get("/", async (req, res) => {
   try {
-    // eval(require('locus'));
-    // const data = await User.find({}).populate('Restaurant');
     if (req.query.name || req.query.zipcode ) {
       const regex = new RegExp(escapeRegex(req.query.name), "gi");
       const zipregex = new RegExp(escapeRegex(req.query.zipcode), "g");
@@ -18,7 +16,6 @@ router.get("/", async (req, res) => {
       const foundRestaurants = await Restaurant.find({});
         res.render('restaurant/index.ejs', {
         restaurants: foundRestaurants,
-        // "users": data
       });
     }
     
@@ -78,19 +75,19 @@ router.post("/", async (req, res) => {
 
 });
 // like route
-router.post("/:id/like", async (req, res) => {
-  try {
-    if (req.session.loggedIn == true) {
-      await req.user.likedRestaurants.push(req.params.id);
-      await req.user.save();
-      res.redirect("/");
-    } else {
-      res.redirect("/auth");
-    }
-  } catch (err) {
-    res.send(err);
-  }
-});
+// router.post("/:id/like", async (req, res) => {
+//   try {
+//     if (req.session.loggedIn == true) {
+//       await req.user.likedRestaurants.push(req.params.id);
+//       await req.user.save();
+//       res.redirect("/");
+//     } else {
+//       res.redirect("/auth");
+//     }
+//   } catch (err) {
+//     res.send(err);
+//   }
+// });
 // review route
 router.post("/:id/review", async (req, res) => {
   try {
